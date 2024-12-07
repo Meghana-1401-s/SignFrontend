@@ -277,18 +277,20 @@ function Chat() {
         </>
       ) : (
         <Button
-          variant="light"
-          style={{
-            fontWeight: "bold",
-            backgroundColor: "lightgray",
-            width: "55px",
-          }}
-          onMouseDown={startListen} // Start listening on press
-          onMouseUp={stopListen} // Stop listening on release
-          className="input-group-append"
-        >
-          <img src="./Images/mic.svg" alt="Mic" />
-        </Button>
+  variant="light"
+  style={{
+    fontWeight: "bold",
+    backgroundColor: "lightgray",
+    width: "55px",
+  }}
+  onMouseDown={startListen} // Start listening on press (Desktop)
+  onMouseUp={stopListen} // Stop listening on release (Desktop)
+  onTouchStart={startListen} // Start listening on touch (Mobile)
+  onTouchEnd={stopListen} // Stop listening on touch (Mobile)
+  className="input-group-append"
+>
+  <img src="./Images/mic.svg" alt="Mic" />
+</Button>
       )}
     </Col>
   </Row>
