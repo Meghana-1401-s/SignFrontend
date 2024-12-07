@@ -191,7 +191,7 @@ function Chat() {
                   {/* Conditionally render image or video */}
                   {['jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg','webp'].includes(fileType) ? (
                     <img
-                      src={`http://localhost:7760/${item.file}`}
+                      src={`https://chatbackend-59al.onrender.com/${item.file}`}
                       alt={item.text}
                       style={{ width: "50%",height:"40vh" }}
                     />
@@ -202,7 +202,7 @@ function Chat() {
                       loop
                       playsInline
                       style={{ width: "50%",height:"40vh" }}
-                      src={`http://localhost:7760/${item.file}`}
+                      src={`https://chatbackend-59al.onrender.com/${item.file}`}
                     ></video>
                   ) : (
                     <Alert variant="warning">Unsupported file type</Alert>
