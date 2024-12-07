@@ -20,7 +20,8 @@ function Chat() {
   const [selectedcategory, setSelectedCategory] = useState("");
   const { transcript, resetTranscript, browserSupportsSpeechRecognition } = useSpeechRecognition();
   
-  const startListen = () => {
+   const startListen = (e) => {
+    e.preventDefault(); 
     if (!browserSupportsSpeechRecognition) {
       alert("Browser does not support speech recognition!");
       return;
@@ -30,12 +31,12 @@ function Chat() {
     SpeechRecognition.startListening({ continuous: true, language: "en-IN" });
   };
 
-  const stopListen = () => {
+  const stopListen = (e) => {
+    e.preventDefault(); 
     // Stop listening for voice input
     SpeechRecognition.stopListening();
     setSearchText(transcript); // Update the input field with the final transcript
   };
-
 
   const clearInput = () => {
     setSearchText("");
