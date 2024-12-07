@@ -30,7 +30,7 @@ function Dict() {
     const fetchCategoryData = async (category) => {
         try {
           // Define the API endpoint
-          const endpoint = `http://localhost:7760/ItemDataByCategory/${category}`;
+          const endpoint = `https://chatbackend-59al.onrender.com/ItemDataByCategory/${category}`;
           
           // Make a GET request to the API
           const response = await axios.get(endpoint);
@@ -199,7 +199,7 @@ function Dict() {
                         height: "250px",
                         objectFit: "contain", // Ensure the image is contained without distortion
                       }}
-                      src={`http://localhost:7760/${item.file}`}
+                      src={`https://chatbackend-59al.onrender.com/${item.file}`}
                       alt="Item"
                     />
                   ) : (
@@ -215,7 +215,7 @@ function Dict() {
                       }}
                      
                     >
-                      <source src={`http://localhost:7760/${item.file}`} type="video/mp4" />
+                      <source src={`https://chatbackend-59al.onrender.com/${item.file}`} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   )}
