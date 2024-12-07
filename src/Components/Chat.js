@@ -184,17 +184,16 @@ function Chat() {
 
           return (
             <Col md={4} key={index} className="mb-4">
-              <Card>
-                <Card.Body>
+             
                   {/* <Card.Subtitle className="mb-2 text-muted">Category: {item.category}</Card.Subtitle>
                   <Card.Title>Text: {item.text}</Card.Title> */}
 
                   {/* Conditionally render image or video */}
                   {['jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg','webp'].includes(fileType) ? (
                     <img
-                      src={`https://chatbackend-59al.onrender.com/${item.file}`}
+                      src={`http://localhost:7760/${item.file}`}
                       alt={item.text}
-                      style={{ width: "50%",height:"30vh" }}
+                      style={{ width: "50%",height:"40vh" }}
                     />
                   ) : ['mp4', 'webm', 'ogg'].includes(fileType) ? (
                     <video
@@ -202,14 +201,13 @@ function Chat() {
                       muted
                       loop
                       playsInline
-                      style={{ width: "50%",height:"50%" }}
-                      src={`https://chatbackend-59al.onrender.com/${item.file}`}
+                      style={{ width: "50%",height:"40vh" }}
+                      src={`http://localhost:7760/${item.file}`}
                     ></video>
                   ) : (
                     <Alert variant="warning">Unsupported file type</Alert>
                   )}
-                </Card.Body>
-              </Card>
+                
             </Col>
           );
         })}
