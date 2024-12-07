@@ -148,7 +148,7 @@ const handleLogin = async (email, password) => {
   return (
     <div>
       <center>
-        <Form style={{ backgroundColor: 'rgb(230, 210, 250)', padding: '20px', width: '330px', borderRadius: '20px' }}>
+        <Form style={{ backgroundColor: 'rgb(230, 210, 250)', padding: '20px', width: '330px', borderRadius: '20px',marginTop:"50px" }}>
           <Image style={{ width: '70px' }} src="/Images/logo.jpeg" />
           <hr />
           <InputGroup controlId="formBasicEmail">
