@@ -65,7 +65,7 @@ function Chat() {
 
   const fetchItems = async () => {
     try {
-      const response = await axios.get(`http://localhost:7760/ItemData/${category}`, {
+      const response = await axios.get(`https://chatbackend-59al.onrender.com/ItemData/${category}`, {
         params: { search: searchText },
       });
       setItems(response.data.items);
@@ -107,7 +107,7 @@ function Chat() {
       dataToSend.append("category", category);
       dataToSend.append("file", file);
 
-      const response = await axios.post('http://localhost:7760/NewItem', dataToSend, {
+      const response = await axios.post('https://chatbackend-59al.onrender.com/NewItem', dataToSend, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
@@ -191,7 +191,7 @@ function Chat() {
                   {/* Conditionally render image or video */}
                   {['jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg','webp'].includes(fileType) ? (
                     <img
-                      src={`http://localhost:7760/${item.file}`}
+                      src={`https://chatbackend-59al.onrender.com/${item.file}`}
                       alt={item.text}
                       style={{ width: "50%",height:"30vh" }}
                     />
@@ -202,7 +202,7 @@ function Chat() {
                       loop
                       playsInline
                       style={{ width: "50%",height:"50%" }}
-                      src={`http://localhost:7760/${item.file}`}
+                      src={`https://chatbackend-59al.onrender.com/${item.file}`}
                     ></video>
                   ) : (
                     <Alert variant="warning">Unsupported file type</Alert>
