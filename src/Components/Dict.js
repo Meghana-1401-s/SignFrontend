@@ -55,6 +55,39 @@ function Dict() {
           }
         }
       };
+
+      const deleteItem = async (itemId) => {
+        try {
+            // API endpoint to delete the item
+            const response = await axios.delete(`https://signbackend.onrender.com/items/${itemId}`);
+            
+            if (response.status === 200) {
+                alert("Item deleted successfully!");
+                // Optionally, refresh the list of items after deletion
+            } else {
+                alert("Failed to delete item: " + response.data.message);
+            }
+        } catch (error) {
+            console.error("Error deleting item:", error);
+            alert("An error occurred while deleting the item.");
+        }
+    };
+
+    const handleDelete = async (itemId) => {
+      const confirmDelete = window.confirm("Are you sure you want to delete this item?");
+      if (confirmDelete) {
+          try {
+              await deleteItem(itemId); // Call the delete function
+              window.location.reload();
+          } catch (error) {
+              console.error("Error deleting item:", error);
+              alert("An error occurred while deleting the item.");
+          }
+      } else {
+          console.log("Item deletion canceled.");
+      }
+  };
+  
   return (
     <div>
         <TopNav/>
@@ -112,14 +145,6 @@ function Dict() {
     <Card onClick={()=>fetchCategoryData("Sentence")}   style={{ width: '50%',backgroundColor:"lightgray" }}>
     <Card.Body>
         <Card.Title style={{textAlign:"center",fontWeight:"bold",fontFamily:"fantasy"}}>Sentences</Card.Title> <hr/>
-      
-      </Card.Body>
-    </Card>
-  </div>
-  <div className="col-md-3 mb-3">
-    <Card onClick={()=>fetchCategoryData("Number")}   style={{ width: '50%',backgroundColor:"lightgray" }}>
-    <Card.Body>
-        <Card.Title style={{textAlign:"center",fontWeight:"bold",fontFamily:"fantasy"}}>Numbers</Card.Title> <hr/>
       
       </Card.Body>
     </Card>
@@ -228,6 +253,10 @@ function Dict() {
                     </video>
                   )}
                 </Card.Body>
+                <Card.Footer>
+                <img onClick={()=> handleDelete(item._id)} style={{width:"25px",margin:"10px"}} src="./Images/del.svg"></img>
+
+                </Card.Footer>
               </Card>
             </center>
           </div>
