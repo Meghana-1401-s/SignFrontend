@@ -1,8 +1,10 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Form, Image, Modal } from 'react-bootstrap';
 import { data, useNavigate } from 'react-router-dom';
 import InputGroup from 'react-bootstrap/InputGroup';
+import { useLocation } from 'react-router-dom';
+
 
 function Register() {
   
@@ -21,6 +23,13 @@ const [loginpassword,setLoginpassword]= useState('');
     const [message, setMessage] = useState('');
     const [messageColor, setMessageColor] = useState('');
     const [smShow, setSmShow] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+      if (location.state?.showSignupModal) {
+        setSmShow(true); // Trigger modal or specific logic
+      }
+    }, [location.state]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
