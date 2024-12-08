@@ -166,6 +166,8 @@ function Chat() {
 
 
       <center>
+      {errorMessage && <Alert variant="danger" className="mt-3">{errorMessage}</Alert>}
+
   <div>
     {/* If items are available, show files; otherwise, show the default video */}
     {items.length === 0 ? (
@@ -193,7 +195,7 @@ function Chat() {
                     <img
                       src={`https://signbackend.onrender.com/${item.file}`}
                       alt={item.text}
-                      style={{ width: "50%",height:"40vh" }}
+                      style={{ width: "300px",height:"60vh" }}
                     />
                   ) : ['mp4', 'webm', 'ogg'].includes(fileType) ? (
                     <video
@@ -201,7 +203,7 @@ function Chat() {
                       muted
                       loop
                       playsInline
-                      style={{ width: "50%",height:"40vh" }}
+                      style={{ width: "300px",height:"60vh" }}
                       src={`https://signbackend.onrender.com/${item.file}`}
                     ></video>
                   ) : (
@@ -216,9 +218,6 @@ function Chat() {
   </div>
 </center>
 
-{errorMessage && <Alert variant="danger" className="mt-3">{errorMessage}</Alert>}
-
-
 
 <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, padding: '10px', backgroundColor: 'white', zIndex: 1000 }}>
   <center>
@@ -230,7 +229,7 @@ function Chat() {
         <div className="input-group">
           <Form.Control
             type="text"
-            placeholder="Type item name"
+            placeholder="Enter the Text"
             value={searchText} // Use only `searchText` for controlled input
             onChange={(e) => setSearchText(e.target.value)}
             className="w-100" // Ensures full width in mobile
@@ -297,6 +296,7 @@ function Chat() {
 
   </center>
 </div>
+
 
       {/* ADD Item Modal */}
       <Modal
