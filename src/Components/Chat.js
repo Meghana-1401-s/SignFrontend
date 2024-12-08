@@ -20,8 +20,7 @@ function Chat() {
   const [selectedcategory, setSelectedCategory] = useState("");
   const { transcript, resetTranscript, browserSupportsSpeechRecognition } = useSpeechRecognition();
   
-   const startListen = (e) => {
-    e.preventDefault(); 
+  const startListen = () => {
     if (!browserSupportsSpeechRecognition) {
       alert("Browser does not support speech recognition!");
       return;
@@ -31,14 +30,15 @@ function Chat() {
     SpeechRecognition.startListening({ continuous: true, language: "en-IN" });
   };
 
-  const stopListen = (e) => {
-    e.preventDefault(); 
+  const stopListen = () => {
     // Stop listening for voice input
     SpeechRecognition.stopListening();
     setSearchText(transcript); // Update the input field with the final transcript
   };
 
+
   const clearInput = () => {
+    window.location.reload();
     setSearchText("");
     resetTranscript(); // Clears the transcript
   };
@@ -137,7 +137,6 @@ function Chat() {
             <option value="Thing">Things</option>
             <option value="Word">Words</option>
             <option value="Sentence">Sentences</option>
-            <option value="Number">Numbers</option>
           </Form.Control>
         </Form.Group>
         
@@ -194,7 +193,7 @@ function Chat() {
                     <img
                       src={`https://signbackend.onrender.com/${item.file}`}
                       alt={item.text}
-                      style={{ width: "300px",height:"60vh" }}
+                      style={{ width: "50%",height:"40vh" }}
                     />
                   ) : ['mp4', 'webm', 'ogg'].includes(fileType) ? (
                     <video
@@ -202,7 +201,7 @@ function Chat() {
                       muted
                       loop
                       playsInline
-                      style={{ width: "300px",height:"60vh" }}
+                      style={{ width: "50%",height:"40vh" }}
                       src={`https://signbackend.onrender.com/${item.file}`}
                     ></video>
                   ) : (
@@ -277,20 +276,18 @@ function Chat() {
         </>
       ) : (
         <Button
-  variant="light"
-  style={{
-    fontWeight: "bold",
-    backgroundColor: "lightgray",
-    width: "55px",
-  }}
-  onMouseDown={startListen} // Start listening on press (Desktop)
-  onMouseUp={stopListen} // Stop listening on release (Desktop)
-  onTouchStart={startListen} // Start listening on touch (Mobile)
-  onTouchEnd={stopListen} // Stop listening on touch (Mobile)
-  className="input-group-append"
->
-  <img src="./Images/mic.svg" alt="Mic" />
-</Button>
+          variant="light"
+          style={{
+            fontWeight: "bold",
+            backgroundColor: "lightgray",
+            width: "55px",
+          }}
+          onMouseDown={startListen} // Start listening on press
+          onMouseUp={stopListen} // Stop listening on release
+          className="input-group-append"
+        >
+          <img src="./Images/mic.svg" alt="Mic" />
+        </Button>
       )}
     </Col>
   </Row>
@@ -353,8 +350,6 @@ function Chat() {
                 <option value="Vegetable">Vegetable</option>
                 <option value="Alphabet">Alphabet</option>
                 <option value="Thing">Thing</option>
-                <option value="Number">Number</option>
-
               </Form.Select>
             </Form.Group>
 
