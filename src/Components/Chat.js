@@ -194,7 +194,7 @@ function Chat() {
                     <img
                       src={`https://signbackend.onrender.com/${item.file}`}
                       alt={item.text}
-                      style={{ width: "50%",height:"40vh" }}
+                      style={{ width: "300px",height:"60vh" }}
                     />
                   ) : ['mp4', 'webm', 'ogg'].includes(fileType) ? (
                     <video
@@ -202,7 +202,7 @@ function Chat() {
                       muted
                       loop
                       playsInline
-                      style={{ width: "50%",height:"40vh" }}
+                      style={{ width: "300px",height:"60vh" }}
                       src={`https://signbackend.onrender.com/${item.file}`}
                     ></video>
                   ) : (
