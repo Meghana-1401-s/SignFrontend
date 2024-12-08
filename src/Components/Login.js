@@ -1,7 +1,9 @@
 import React from 'react';
 import { Button, Container, Row, Col, Image } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+  const navigate = useNavigate();
   return (
     <Container
       fluid
@@ -31,27 +33,27 @@ function Login() {
 
       {/* Buttons Section (Side by Side) */}
       <Row>
-        <Col md={6} className="mb-3">
-          <Button
-            variant="success"
-            size="lg"
-            style={{ width: "100%", padding: "10px",fontWeight:"bold" }}
-            onClick={() => window.location.href = '/register'}
-          >
-            Login
-          </Button>
-        </Col>
-        <Col md={6} className="mb-4">
-          <Button
-            variant="warning"
-            size="lg"
-            style={{ width: "100%", padding: "10px",fontWeight:"bold",textAlign:"center" }}
-            onClick={() => window.location.href = '/register'}
-          >
-            Signup
-          </Button>
-        </Col>
-      </Row>
+      <Col md={6} className="mb-3">
+        <Button
+          variant="success"
+          size="lg"
+          style={{ width: "100%", padding: "10px", fontWeight: "bold" }}
+          onClick={() => navigate('/register')}
+        >
+          Login
+        </Button>
+      </Col>
+      <Col md={6} className="mb-4">
+        <Button
+          variant="warning"
+          size="lg"
+          style={{ width: "100%", padding: "10px", fontWeight: "bold", textAlign: "center" }}
+          onClick={() => navigate('/register', { state: { showSignupModal: true } })}
+        >
+          Signup
+        </Button>
+      </Col>
+    </Row>
     </Container>
   );
 };
