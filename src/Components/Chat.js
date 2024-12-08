@@ -170,7 +170,7 @@ function Chat() {
     {/* If items are available, show files; otherwise, show the default video */}
     {items.length === 0 ? (
       <video
-        style={{ width: 300px", height: "60vh" }}
+        style={{ width: "300px", height: "60vh" }}
         autoPlay
         muted
         loop
