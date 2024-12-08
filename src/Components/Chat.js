@@ -137,6 +137,7 @@ function Chat() {
             <option value="Thing">Things</option>
             <option value="Word">Words</option>
             <option value="Sentence">Sentences</option>
+            <option value="Number">Numbers</option>
           </Form.Control>
         </Form.Group>
         
@@ -352,6 +353,8 @@ function Chat() {
                 <option value="Vegetable">Vegetable</option>
                 <option value="Alphabet">Alphabet</option>
                 <option value="Thing">Thing</option>
+                <option value="Number">Number</option>
+
               </Form.Select>
             </Form.Group>
 
