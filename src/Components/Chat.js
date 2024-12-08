@@ -170,12 +170,12 @@ function Chat() {
     {/* If items are available, show files; otherwise, show the default video */}
     {items.length === 0 ? (
       <video
-        style={{ width: "100%", height: "50vh" }}
+        style={{ width: 300px", height: "60vh" }}
         autoPlay
         muted
         loop
         playsInline
-        src="./Images/hi.webm"
+        src="./Videos/welcome.mp4"
       ></video>
     ) : (
       <Row className="mt-4">
