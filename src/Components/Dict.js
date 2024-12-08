@@ -116,6 +116,14 @@ function Dict() {
       </Card.Body>
     </Card>
   </div>
+  <div className="col-md-3 mb-3">
+    <Card onClick={()=>fetchCategoryData("Number")}   style={{ width: '50%',backgroundColor:"lightgray" }}>
+    <Card.Body>
+        <Card.Title style={{textAlign:"center",fontWeight:"bold",fontFamily:"fantasy"}}>Numbers</Card.Title> <hr/>
+      
+      </Card.Body>
+    </Card>
+  </div>
  
 </div>
          </center>
