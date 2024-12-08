@@ -298,7 +298,6 @@ function Chat() {
   </center>
 </div>
 
-
       {/* ADD Item Modal */}
       <Modal
         size="lg"
