@@ -5,7 +5,7 @@ import { Button, Card, Container, Row, Col } from "react-bootstrap";
 
 // Original quiz data
 const quizData = [
-    // Animals
+    // Alphabets
     {
       category: "Alphabet",
       question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
@@ -13,29 +13,226 @@ const quizData = [
       answer: "A",
     },
     {
-      category: "Animals",
-      question: "Which animal is known as the 'King of the Jungle'?",
-      options: ["Lion", "Tiger", "Cheetah", "Panther"],
-      answer: "Lion",
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["A", "B", "H", "Z"],
+      answer: "B",
     },
     {
-      category: "Animals",
-      question: "Which of these animals can fly?",
-      options: ["Penguin", "Eagle", "Dolphin", "Cheetah"],
-      answer: "Eagle",
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["C", "R", "E", "W"],
+      answer: "C",
     },
     {
-      category: "Animals",
-      question: "Which animal is known for producing milk?",
-      options: ["Cow", "Snake", "Crocodile", "Wolf"],
-      answer: "Cow",
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["F", "J", "D", "Q"],
+      answer: "D",
     },
     {
-      category: "Animals",
-      question: "Which of these animals lives in water?",
-      options: ["Dog", "Shark", "Horse", "Panda"],
-      answer: "Shark",
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["H", "F", "E", "I"],
+      answer: "E",
     },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["H", "F", "E", "I"],
+      answer: "F",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["A", "G", "F", "I"],
+      answer: "G",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["H", "F", "E", "I"],
+      answer: "H",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["I", "F", "E", "I"],
+      answer: "I",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["H", "F", "J", "I"],
+      answer: "J",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["H", "F", "E", "K"],
+      answer: "K",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["L", "F", "E", "I"],
+      answer: "L",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["H", "M", "E", "I"],
+      answer: "M",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["H", "N", "E", "I"],
+      answer: "N",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["H", "F", "E", "O"],
+      answer: "O",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["H", "F", "P", "I"],
+      answer: "P",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["H", "F", "Q", "I"],
+      answer: "Q",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["H", "F", "E", "R"],
+      answer: "R",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["H", "S", "E", "I"],
+      answer: "S",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["H", "F", "T", "I"],
+      answer: "T",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["U", "F", "E", "I"],
+      answer: "U",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["H", "V", "A", "I"],
+      answer: "V",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options:["C", "B", "A", "W"],
+      answer: "W",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["H", "X", "E", "I"],
+      answer: "X",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["Y", "G", "H", "I"],
+      answer: "Y",
+    },
+     {
+      category: "Alphabet",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["A", "G", "I", "Z"],
+      answer: "Z",
+    },
+
+    //Numbers
+    {
+      category: "Numbers",
+      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["1", "0"],
+      answer: "0",
+    },
+    {
+      category:  "Numbers",
+      question: <center>What  Number is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["0", "1"],
+      answer: "1",
+    },
+    {
+      category:  "Numbers",
+      question: <center>What  Number is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["2", "7"],
+      answer: "2",
+    },
+    {
+      category: "Numbers",
+      question: <center>What  Number is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["3", "8"],
+      answer: "3",
+    },
+    {
+      category: "Numbers",
+      question: <center>What  Number is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["2", "4"],
+      answer: "4",
+    },
+    {
+      category:  "Numbers",
+      question: <center>What  Number is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["5", "9"],
+      answer: "5",
+    },
+    {
+      category:  "Numbers",
+      question: <center>What  Number is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["6", "10"],
+      answer: "6",
+    },
+    {
+      category:  "Numbers",
+      question: <center>What Number is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["3", "7"],
+      answer: "7",
+    },
+    {
+      category:  "Numbers",
+      question: <center>What Number is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["8", "4"],
+      answer: "8",
+    },
+    {
+      category:  "Numbers",
+      question: <center>What Number is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["6", "9"],
+      answer: "9",
+    },
+    {
+      category: "Numbers",
+      question: <center>What Number is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      options: ["1", "10"],
+      answer: "10",
+    },
+    
+    
+    
   
     // Fruits
     {
@@ -132,6 +329,7 @@ const quizData = [
       options: ["B", "E", "G", "H"],
       answer: "E",
     },
+    
   
     // Things
     {
