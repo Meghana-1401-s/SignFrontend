@@ -11,7 +11,7 @@ const quizData = [
   question: (
     <center>
       What Alphabet is this? <br />
-      {<img src="./Images/Alphabets/A.jpg" alt="Sign for A" style={{ width: "100%" }} />}
+      {<img src="./Images/Alphabets/A.jpg" alt="Sign for A" style={{ width: "50%" }} />}
     </center>
   ),
   options: ["A", "F", "H", "Z"],
