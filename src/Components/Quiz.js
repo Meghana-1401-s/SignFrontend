@@ -8,7 +8,7 @@ const quizData = [
     // Alphabets
     {
       category: "Alphabet",
-      question: <center>What Alphabet is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"50%"}} src="./Videos/a.mp4"></video>}</center>,
+      question: <center>What Alphabet is this ? <br/><img src="./Images/Alpabets/A.jpg" alt="Sign for A" style={{ width: "100%" }}/></center>,
       options: ["A", "F", "H", "Z"],
       answer: "A",
     },
