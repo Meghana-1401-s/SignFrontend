@@ -8,7 +8,7 @@ const quizData = [
     // Alphabets
     {
       category: "Alphabet",
-      question: <center>What Alphabet is this ? <br/><img src="./Images/Alpabets/A.jpg" alt="Sign for A" style={{ width: "100%" }}/></center>,
+      question: <center>What Alphabet is this ? <br/> <img src="./Images/Alpabets/A.jpg" alt="Sign for A" style={{ width: "100%" }}/></center>,
       options: ["A", "F", "H", "Z"],
       answer: "A",
     },
