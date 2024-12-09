@@ -16,7 +16,7 @@ const quizData = [
   ),
   options: ["A", "F", "H", "Z"],
   answer: "A",
-}
+},
 
     {
       category: "Alphabet",
