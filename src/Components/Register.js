@@ -10,6 +10,9 @@ function Register() {
   
 const [loginemail,setLoginemail]= useState('');
 const [loginpassword,setLoginpassword]= useState('');
+const [forgotPassShow,setForgotPassShow]=useState(false);
+const [newPassShow,setNewPassShow]=useState(false);
+const [newPassword, setNewPassword] = useState('');
   const [show, setShow] = useState(false);
   const [name, setName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -73,7 +76,22 @@ const [loginpassword,setLoginpassword]= useState('');
             setMessageColor('red')
         }
     };
-    
+    const verifyPassOtp = async (e) => {
+      e.preventDefault();
+      
+          try {
+              const response = await axios.post('https://signbackend.onrender.com/verify-otp', { enteredOtp: otp, generatedOtp });
+              console.log('Server response:', response); // Log the server response
+              setMessage(response.data); // Show success message
+              setMessageColor('green')
+              setNewPassShow(true);
+  
+          } catch (error) {
+              console.error('Error verifying OTP:', error);
+              setMessage("Invalid OTP");
+              setMessageColor('red')
+          }
+      };
 
   const validate = () => {
     const formErrors = {};
@@ -154,6 +172,40 @@ const handleLogin = async (email, password) => {
   const handleClose = () => {setShow(false);window.location.reload();}
   const handleShow = () => setShow(true);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrors({});
+    setMessage('');
+
+    // Form validation
+    if (!email) {
+      setErrors((prev) => ({ ...prev, email: 'Email is required.' }));
+      return;
+    }
+    if (!newPassword || newPassword.length < 6) {
+      setErrors((prev) => ({
+        ...prev,
+        newPassword: 'Password must be at least 6 characters.',
+      }));
+      return;
+    }
+
+    try {
+      // API call to update password
+      const response = await axios.put('https://signbackend.onrender.com/update-password', {
+        email,
+        password: newPassword,
+      });
+
+      setMessage(response.data.message);
+      alert(response.data.message);
+      window.location.reload();
+    } catch (error) {
+      setMessage(error.response?.data?.message || 'An error occurred.');
+    }
+  };
+
+
   return (
     <div>
       <center>
@@ -168,7 +220,7 @@ const handleLogin = async (email, password) => {
             <Form.Control value={loginpassword} onChange={(e)=> setLoginpassword(e.target.value)} style={{padding:"10px"}} type="password" placeholder="Enter Your Password" />
             <InputGroup.Text id="basic-addon1"><img style={{width:"25px"}} src='./Images/lock.svg'></img></InputGroup.Text>
           </InputGroup>
-          <a href="" style={{ color: 'blue', textDecoration: 'none' }}>
+          <a  onClick={()=>setForgotPassShow(true)} style={{ color: 'blue', textDecoration: 'none' }}>
             Forgot Password?
           </a>
           <hr />
@@ -238,6 +290,63 @@ const handleLogin = async (email, password) => {
             </center>
         </Modal.Body>
       </Modal>
+      <Modal
+        size="sm"
+        show={forgotPassShow}
+        // onHide={() => setForgotPassShow(false)}
+        aria-labelledby="example-modal-sizes-title-sm"
+      >
+        <Modal.Header >
+          {/* <Modal.Title id="example-modal-sizes-title-sm">
+            Small Modal
+          </Modal.Title> */}
+        </Modal.Header>
+        <Modal.Body>
+        <center>
+                <Form style={{ backgroundColor: "ButtonShadow", padding: "10px" }}>
+                <Form.Group className="mb-3">
+                <Form.Label style={{ fontWeight: "bold" }}>Enter Email</Form.Label>
+
+        <Form.Control
+                        
+                        type="email"
+                        name="email"
+                        value={email}
+                        onChange={handleChange}
+                        placeholder="Enter your email"
+                        required
+                        style={{padding:"10px"}}
+                    />
+
+      </Form.Group>
+                    
+
+                    <Button variant="primary" type="submit" onClick={sendOtp}>
+                        Send OTP
+                    </Button>
+                    <hr />
+                    <p style={{color: messageColor}}>{message}</p>
+
+                    <Form.Group className="mb-3" controlId="formBasicOtp">
+                        <Form.Label style={{ fontWeight: "bold" }}>Enter OTP</Form.Label>
+                        <Form.Control
+                            type="text"
+                            name="otp"
+                            value={otp}
+                            onChange={handleChange}
+                            placeholder="Enter OTP"
+                            required
+                        />
+                    </Form.Group>
+
+                    <Button variant="success" type='button' onClick={verifyPassOtp}>
+                        Verify
+                    </Button>
+
+                </Form>
+            </center>
+        </Modal.Body>
+      </Modal>
 
         <Modal show={show}  onHide={handleClose}>
           <Modal.Body>
@@ -299,6 +408,52 @@ const handleLogin = async (email, password) => {
                 Signup
               </Button>
             </Form>
+          </Modal.Body>
+        </Modal>
+        <Modal show={newPassShow}  onHide={()=>setNewPassShow(false)}>
+          <Modal.Body>
+         
+          <Form
+      style={{
+        backgroundColor: 'lightgray',
+        padding: '20px',
+        borderRadius: '20px',
+        textAlign: 'center',
+      }}
+      onSubmit={handleSubmit}
+    >
+      <Image style={{ width: '70px' }} src="/Images/logo.jpeg" />
+      <hr />
+      <Form.Group>
+        <Form.Label style={{ fontWeight: 'bold' }}>Email</Form.Label>
+        <Form.Control
+          style={{ padding: '10px' }}
+          type="text"
+          placeholder="Enter Email"
+          value={email}
+          readOnly
+        />
+        {errors.email && <Form.Text style={{ color: 'red' }}>{errors.email}</Form.Text>}
+      </Form.Group>
+      <Form.Group>
+        <Form.Label style={{ fontWeight: 'bold' }}>New Password</Form.Label>
+        <Form.Control
+          style={{ padding: '10px' }}
+          type="password"
+          placeholder="Enter New Password"
+          value={newPassword}
+          onChange={(e) => setNewPassword(e.target.value)}
+        />
+        {errors.newPassword && (
+          <Form.Text style={{ color: 'red' }}>{errors.newPassword}</Form.Text>
+        )}
+      </Form.Group>
+      <hr />
+      <Button style={{ width: '100%', fontWeight: 'bold' }} type="submit" variant="success">
+        Update
+      </Button>
+      {message && <p style={{ marginTop: '10px', color: 'blue' }}>{message}</p>}
+    </Form>
           </Modal.Body>
         </Modal>
       </center>
