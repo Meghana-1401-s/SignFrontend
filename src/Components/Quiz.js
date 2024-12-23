@@ -228,35 +228,73 @@ const quizData = [
   
     // Vegetables
   {
-    category: "Vegetables",
-    question: "Which of these vegetables is green?",
-    options: ["Carrot", "Potato", "Spinach", "Tomato"],
-    answer: "Spinach",
+      category:  "Vegetables",
+      question: <center>Guess the vegitsble ? <br/>{<video  autoPlay muted loop playsInline style={{width:"100%"}} src="./Videos/Vegetables/Tomato.mp4"></video>}</center>,
+      options: ["Cabbage", "Carrot", "Tomato", "Beans"],
+      answer: "Tomato",
   },
   {
-    category: "Vegetables",
-    question: "Which vegetable is also known as a 'root vegetable'?",
-    options: ["Cabbage", "Carrot", "Peas", "Beans"],
-    answer: "Carrot",
+      category:  "Vegetables",
+      question: <center>Guess the vegitsble ? <br/>{<video  autoPlay muted loop playsInline style={{width:"100%"}} src="./Videos/Vegetables/Cabbage.mp4"></video>}</center>,
+      options: ["Cabbage", "Carrot", "Tomato", "Beans"],
+      answer: "Cabbage",
   },
   {
-    category: "Vegetables",
-    question: "Which vegetable is commonly used in salads?",
-    options: ["Lettuce", "Brinjal", "Pumpkin", "Garlic"],
-    answer: "Lettuce",
+      category:  "Vegetables",
+      question: <center>Guess the vegitsble ? <br/>{<video  autoPlay muted loop playsInline style={{width:"100%"}} src="./Videos/Vegetables/Potato.mp4"></video>}</center>,
+      options: ["Cabbage", "Potato", "Tomato", "Beans"],
+      answer: "Potato",
   },
   {
-    category: "Vegetables",
-    question: "Which of these is not a leafy vegetable?",
-    options: ["Spinach", "Coriander", "Onion", "Mint"],
-    answer: "Onion",
+      category:  "Vegetables",
+      question: <center>Guess the vegitsble ? <br/>{<video  autoPlay muted loop playsInline style={{width:"100%"}} src="./Videos/Vegetables/Garlic.mp4"></video>}</center>,
+      options: ["Cabbage", "Carrot", "Tomato", "Garlic"],
+      answer: "Garlic",
   },
   {
-    category: "Vegetables",
-    question: "Which of these vegetables is orange?",
-    options: ["Carrot", "Cucumber", "Radish", "Broccoli"],
-    answer: "Carrot",
+      category:  "Vegetables",
+      question: <center>Guess the vegitsble ? <br/>{<video  autoPlay muted loop playsInline style={{width:"100%"}} src="./Videos/Vegetables/Onion.mp4"></video>}</center>,
+      options: ["Cabbage", "Onion", "Tomato", "Beans"],
+      answer: "Onion",
   },
+// Animals
+    {
+      category: "Animals",
+      question: <center>What animal is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"100%"}} src="./Videos/Animals/Cat.mp4"></video>}</center>,
+      options: ["Cat", "Dog", "Tiger", "Rat"],
+      answer: "Cat",
+    },
+    {
+      category: "Animals",
+      question: <center>What animal is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"100%"}} src="./Videos/Animals/Giraffe.mp4"></video>}</center>,
+      options: ["Cat", "Tiger", "Giraffe", "Rat"],
+      answer: "Giraffe",
+    },
+    {
+      category: "Animals",
+      question: <center>What animal is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"100%"}} src="./Videos/Animals/Gorilla.mp4"></video>}</center>,
+      options: ["Donkey", "Rat", "Lion", "Gorilla"],
+      answer: "Gorilla",
+    },
+    {
+      category: "Animals",
+      question: <center>What animal is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"100%"}} src="./Videos/Animals/Lion.mp4"></video>}</center>,
+      options: ["Lion", "Dog", "Tiger", "Rat"],
+      answer: "Lion",
+    },
+    {
+      category: "Animals",
+      question: <center>What animal is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"100%"}} src="./Videos/Animals/Rat.mp4"></video>}</center>,
+      options: ["Cat", "Dog", "Tiger", "Rat"],
+      answer: "Rat",
+    },
+    {
+      category: "Animals",
+      question: <center>What animal is this ? <br/>{<video  autoPlay muted loop playsInline style={{width:"100%"}} src="./Videos/Animals/Tiger.mp4"></video>}</center>,
+      options: ["Cat", "Dog", "Tiger", "Rat"],
+      answer: "Tiger",
+    },
+  
   ];
   
 
