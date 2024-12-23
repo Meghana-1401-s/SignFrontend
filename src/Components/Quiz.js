@@ -57,7 +57,7 @@ const quizData = [
      {
       category: "Alphabet",
       question: ( <center> What Alphabet is this? <br /> {<img src="./Images/Alphabets/I.jpg" alt="Sign for A" style={{ width: "60%" }} />} </center>),
-      options: ["I", "F", "E", "I"],
+      options: ["I", "F", "E", "K"],
       answer: "I",
     },
      {
