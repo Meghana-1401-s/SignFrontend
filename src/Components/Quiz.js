@@ -229,7 +229,7 @@ const quizData = [
     // Vegetables
   {
       category:  "Vegetables",
-      question: <center>Guess the vegitsble ? <br/>{<video  autoPlay muted loop playsInline style={{width:"100%"}} src="./Videos/Vegetables/Tomato.mp4"></video>}</center>,
+      question: <center>Guess the vegetable ? <br/>{<video  autoPlay muted loop playsInline style={{width:"100%"}} src="./Videos/Vegetables/Tomato.mp4"></video>}</center>,
       options: ["Cabbage", "Carrot", "Tomato", "Beans"],
       answer: "Tomato",
   },
