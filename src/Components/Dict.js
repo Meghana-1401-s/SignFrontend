@@ -30,7 +30,7 @@ function Dict() {
     const fetchCategoryData = async (category) => {
         try {
           // Define the API endpoint
-          const endpoint = `https://signbackend.onrender.com/ItemDataByCategory/${category}`;
+          const endpoint = `https://signbackend-9pt6.onrender.com/ItemDataByCategory/${category}`;
           
           // Make a GET request to the API
           const response = await axios.get(endpoint);
@@ -59,7 +59,7 @@ function Dict() {
       const deleteItem = async (itemId) => {
         try {
             // API endpoint to delete the item
-            const response = await axios.delete(`https://signbackend.onrender.com/items/${itemId}`);
+            const response = await axios.delete(`https://signbackend-9pt6.onrender.com/items/${itemId}`);
             
             if (response.status === 200) {
                 alert("Item deleted successfully!");
@@ -232,7 +232,7 @@ function Dict() {
                         height: "250px",
                         objectFit: "contain", // Ensure the image is contained without distortion
                       }}
-                      src={`https://signbackend.onrender.com/${item.file}`}
+                      src={`https://signbackend-9pt6.onrender.com/${item.file}`}
                       alt="Item"
                     />
                   ) : (
@@ -248,7 +248,7 @@ function Dict() {
                       }}
                      
                     >
-                      <source src={`https://signbackend.onrender.com/${item.file}`} type="video/mp4" />
+                      <source src={`https://signbackend-9pt6.onrender.com/${item.file}`} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   )}
