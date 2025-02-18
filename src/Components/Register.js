@@ -48,7 +48,7 @@ const [newPassword, setNewPassword] = useState('');
         e.preventDefault();
 
         try {
-            const response = await axios.post('https://signbackend.onrender.com/send-otp', { email });
+            const response = await axios.post('https://signbackend-9pt6.onrender.com/send-otp', { email });
             setGeneratedOtp(response.data.otp); // Save the OTP sent by the server
             setMessage('OTP sent successfully');
             setMessageColor('green')
@@ -64,7 +64,7 @@ const [newPassword, setNewPassword] = useState('');
     e.preventDefault();
     
         try {
-            const response = await axios.post('https://signbackend.onrender.com/verify-otp', { enteredOtp: otp, generatedOtp });
+            const response = await axios.post('https://signbackend-9pt6.onrender.com/verify-otp', { enteredOtp: otp, generatedOtp });
             console.log('Server response:', response); // Log the server response
             setMessage(response.data); // Show success message
             setMessageColor('green')
@@ -80,7 +80,7 @@ const [newPassword, setNewPassword] = useState('');
       e.preventDefault();
       
           try {
-              const response = await axios.post('https://signbackend.onrender.com/verify-otp', { enteredOtp: otp, generatedOtp });
+              const response = await axios.post('https://signbackend-9pt6.onrender.com/verify-otp', { enteredOtp: otp, generatedOtp });
               console.log('Server response:', response); // Log the server response
               setMessage(response.data); // Show success message
               setMessageColor('green')
@@ -120,7 +120,7 @@ const [newPassword, setNewPassword] = useState('');
   const sendUserDatatoDB = async ()=>{
     if (validate()) {
       try {
-        const response = await axios.post('https://signbackend.onrender.com/Newuser', {
+        const response = await axios.post('https://signbackend-9pt6.onrender.com/Newuser', {
           username: name,
           email,
           password,
@@ -148,7 +148,7 @@ const [newPassword, setNewPassword] = useState('');
 
 const handleLogin = async (email, password) => {
     try {
-        const response = await axios.post('https://signbackend.onrender.com/login', { email, password });
+        const response = await axios.post('https://signbackend-9pt6.onrender.com/login', { email, password });
 
         if (response.data.status === "Success") {
             alert(response.data.msg)
@@ -192,7 +192,7 @@ const handleLogin = async (email, password) => {
 
     try {
       // API call to update password
-      const response = await axios.put('https://signbackend.onrender.com/update-password', {
+      const response = await axios.put('https://signbackend-9pt6.onrender.com/update-password', {
         email,
         password: newPassword,
       });
