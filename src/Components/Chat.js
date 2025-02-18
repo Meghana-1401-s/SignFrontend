@@ -66,7 +66,7 @@ function Chat() {
 
   const fetchItems = async () => {
     try {
-      const response = await axios.get(`https://signbackend.onrender.com/ItemData/${category}`, {
+      const response = await axios.get(`https://signbackend-9pt6.onrender.com/ItemData/${category}`, {
         params: { search: searchText },
       });
       setItems(response.data.items);
@@ -108,7 +108,7 @@ function Chat() {
       dataToSend.append("category", category);
       dataToSend.append("file", file);
 
-      const response = await axios.post('https://signbackend.onrender.com/NewItem', dataToSend, {
+      const response = await axios.post('https://signbackend-9pt6.onrender.com/NewItem', dataToSend, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
@@ -193,7 +193,7 @@ function Chat() {
                   {/* Conditionally render image or video */}
                   {['jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg','webp'].includes(fileType) ? (
                     <img
-                      src={`https://signbackend.onrender.com/${item.file}`}
+                      src={`https://signbackend-9pt6.onrender.com/${item.file}`}
                       alt={item.text}
                       style={{ width: "300px",height:"60vh" }}
                     />
@@ -204,7 +204,7 @@ function Chat() {
                       loop
                       playsInline
                       style={{ width: "300px",height:"60vh" }}
-                      src={`https://signbackend.onrender.com/${item.file}`}
+                      src={`https://signbackend-9pt6.onrender.com/${item.file}`}
                     ></video>
                   ) : (
                     <Alert variant="warning">Unsupported file type</Alert>
